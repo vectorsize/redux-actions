@@ -1,5 +1,7 @@
 # redux-actions
 
+This is a WIP fork that uses Symbols for action keys. Tests won't pass right now, also namespacing is no longer supported.
+
 [![build status](https://img.shields.io/travis/acdlite/redux-actions/master.svg?style=flat-square)](https://travis-ci.org/acdlite/redux-actions)
 
 [![NPM](https://nodei.co/npm/redux-actions.png?downloads=true)](https://nodei.co/npm/redux-actions/)
