@@ -15,11 +15,11 @@ export default function createAction(type, payloadCreator = identity, metaCreato
       ? head : payloadCreator(head, ...args));
 
   const hasMeta = isFunction(metaCreator);
-  const typeString = type.toString();
+  const typeSymbol = Symbol(type);
 
   const actionCreator = (...args) => {
     const payload = finalPayloadCreator(...args);
-    const action = { type };
+    const action = { type: typeSymbol };
 
     if (payload instanceof Error) {
       action.error = true;
@@ -36,7 +36,7 @@ export default function createAction(type, payloadCreator = identity, metaCreato
     return action;
   };
 
-  actionCreator.toString = () => typeString;
+  actionCreator.toString = () => typeSymbol;
 
   return actionCreator;
 }

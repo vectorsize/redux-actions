@@ -11,13 +11,16 @@ export default function handleActions(handlers, defaultState, { namespace } = {}
     'Expected handlers to be an plain object.'
   );
   const flattenedReducerMap = flattenReducerMap(handlers, namespace);
-  const reducers = ownKeys(flattenedReducerMap).map(type =>
-    handleAction(
-      type,
-      flattenedReducerMap[type],
-      defaultState
-    )
-  );
+  const reducers = ownKeys(flattenedReducerMap)
+    .reduce((stack, type) =>
+      stack.concat(
+        [handleAction(
+          type,
+          flattenedReducerMap[type],
+          defaultState
+        )])
+    , []);
+
   const reducer = reduceReducers(...reducers);
   return (state = defaultState, action) => reducer(state, action);
 }

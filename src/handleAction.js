@@ -5,13 +5,12 @@ import isNil from 'lodash/isNil';
 import isUndefined from 'lodash/isUndefined';
 import includes from 'lodash/includes';
 import invariant from 'invariant';
-import { ACTION_TYPE_DELIMITER } from './combineActions';
 
 export default function handleAction(type, reducer = identity, defaultState) {
-  const types = type.toString().split(ACTION_TYPE_DELIMITER);
+  const types = [type];
   invariant(
     !isUndefined(defaultState),
-    `defaultState for reducer handling ${types.join(', ')} should be defined`
+    `defaultState for reducer handling ${types.map(t => t.toString()).join(', ')} should be defined`
   );
   invariant(
     isFunction(reducer) || isPlainObject(reducer),
@@ -24,7 +23,7 @@ export default function handleAction(type, reducer = identity, defaultState) {
 
   return (state = defaultState, action) => {
     const { type: actionType } = action;
-    if (!actionType || !includes(types, actionType.toString())) {
+    if (!actionType || !includes(types, actionType)) {
       return state;
     }
 
