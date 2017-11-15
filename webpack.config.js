@@ -29,7 +29,7 @@ module.exports = {
   entry: path.join(__dirname, 'src/index.js'),
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: `redux-actions${production ? '.min' : ''}.js`,
+    filename: production ? 'index.js' : 'redux-actions.js',
     library: 'ReduxActions',
     libraryTarget: 'umd'
   },

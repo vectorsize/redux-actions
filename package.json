@@ -7,7 +7,7 @@
   "jsnext:main": "es/index.js",
   "scripts": {
     "postinstall": "npm run build",
-    "build:commonjs": "NODE_ENV=production && webpack",
+    "build:commonjs": "NODE_ENV=production && webpack -c webpack.config.js",
     "build": "npm run clean && npm run build:commonjs",
     "clean": "rimraf ./lib ./es",
     "lint": "esw build src webpack.config --color",
