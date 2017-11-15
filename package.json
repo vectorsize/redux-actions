@@ -40,7 +40,7 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "babel-cli": "^6.7.7",
+    "babel-cli": "^6.26.0",
     "babel-core": "^6.7.7",
     "babel-eslint": "^6.1.1",
     "babel-loader": "^6.2.4",
@@ -59,7 +59,6 @@
     "webpack": "^1.13.1"
   },
   "dependencies": {
-    "babel": "^6.23.0",
     "babel-plugin-use-lodash-es": "^0.1.0",
     "invariant": "^2.2.1",
     "lodash": "^4.13.1",
