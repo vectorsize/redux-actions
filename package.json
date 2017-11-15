@@ -7,9 +7,9 @@
   "jsnext:main": "es/index.js",
   "scripts": {
     "postinstall": "npm run build",
-    "build:commonjs": "babel src --out-dir lib --ignore *-test.js",
+    "build:commonjs": "babel ./src --out-dir ./lib --ignore *-test.js",
     "build": "npm run clean && npm run build:commonjs",
-    "clean": "rimraf lib es",
+    "clean": "rimraf ./lib ./es",
     "lint": "esw build src webpack.config --color",
     "lint:fix": "npm run lint -- --fix",
     "lint:watch": "npm run lint -- --watch",
