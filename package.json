@@ -40,7 +40,7 @@
     "url": "https://github.com/acdlite/redux-actions.git"
   },
   "license": "MIT",
-  "devDependencies": {
+  "dependencies": {
     "babel-cli": "^6.7.7",
     "babel-core": "^6.7.7",
     "babel-eslint": "^6.1.1",
@@ -58,9 +58,7 @@
     "gitbook-cli": "^2.3.0",
     "mocha": "^2.2.5",
     "rimraf": "^2.6.2",
-    "webpack": "^1.13.1"
-  },
-  "dependencies": {
+    "webpack": "^1.13.1",
     "invariant": "^2.2.1",
     "lodash": "^4.13.1",
     "lodash-es": "^4.17.4",
