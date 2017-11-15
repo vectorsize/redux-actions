@@ -6,7 +6,7 @@ import isUndefined from 'lodash/isUndefined';
 import includes from 'lodash/includes';
 import invariant from 'invariant';
 
-export default function handleAction(type, reducer = identity, defaultState) {
+export default function handleAction(type, reducer = identity, defaultState={}) {
   const types = [type];
   invariant(
     !isUndefined(defaultState),
