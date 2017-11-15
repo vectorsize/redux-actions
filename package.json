@@ -4,9 +4,9 @@
   "description": "Flux Standard Action utlities for Redux",
   "main": "lib/index.js",
   "module": "es/index.js",
-  "postinstall": "npm run build",
   "jsnext:main": "es/index.js",
   "scripts": {
+    "postinstall": "npm run build",
     "build:es": "cross-env BABEL_ENV=es babel src --out-dir es --ignore *-test.js",
     "build:commonjs": "babel src --out-dir lib --ignore *-test.js",
     "build:umd": "cross-env NODE_ENV=development webpack",
