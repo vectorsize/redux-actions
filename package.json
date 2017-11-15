@@ -59,6 +59,7 @@
     "webpack": "^1.13.1"
   },
   "dependencies": {
+    "babel": "^6.23.0",
     "babel-plugin-use-lodash-es": "^0.1.0",
     "invariant": "^2.2.1",
     "lodash": "^4.13.1",
