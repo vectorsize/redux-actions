@@ -64,6 +64,7 @@
     "invariant": "^2.2.1",
     "lodash": "^4.13.1",
     "lodash-es": "^4.17.4",
-    "reduce-reducers": "^0.1.0"
+    "reduce-reducers": "^0.1.0",
+    "redux-actions": "vectorsize/redux-actions"
   }
 }
