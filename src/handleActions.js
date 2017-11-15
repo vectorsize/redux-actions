@@ -4,7 +4,7 @@ import invariant from 'invariant';
 import handleAction from './handleAction';
 import ownKeys from './ownKeys';
 
-export default function handleActions(handlers, defaultState) {
+export default function handleActions(handlers, defaultState = {}) {
   invariant(
     isPlainObject(handlers),
     'Expected handlers to be an plain object.'
