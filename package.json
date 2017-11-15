@@ -6,13 +6,13 @@
   "module": "es/index.js",
   "jsnext:main": "es/index.js",
   "scripts": {
-    "postinstall": "npm run build",
-    "build:es": "BABEL_ENV=es babel src --out-dir es --ignore *-test.js",
+    "postinstall": "npm install --only=dev && npm run build",
+    "build:es": "cross-env BABEL_ENV=es babel src --out-dir es --ignore *-test.js",
     "build:commonjs": "babel src --out-dir lib --ignore *-test.js",
-    "build:umd": "NODE_ENV=development webpack",
-    "build:umd:min": "NODE_ENV=production webpack",
+    "build:umd": "cross-env NODE_ENV=development webpack",
+    "build:umd:min": "cross-env NODE_ENV=production webpack",
     "build": "npm run clean && npm run build:es && npm run build:commonjs && npm run build:umd && npm run build:umd:min",
-    "clean": "rm -rf lib",
+    "clean": "rimraf lib es",
     "lint": "esw build src webpack.config --color",
     "lint:fix": "npm run lint -- --fix",
     "lint:watch": "npm run lint -- --watch",
@@ -20,6 +20,7 @@
     "test:watch": "npm run test -- --watch src/**/*-test.js"
   },
   "files": [
+    "es",
     "lib",
     "dist"
   ],
@@ -40,7 +41,7 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "babel-cli": "^6.26.0",
+    "babel-cli": "^6.7.7",
     "babel-core": "^6.7.7",
     "babel-eslint": "^6.1.1",
     "babel-loader": "^6.2.4",
@@ -56,10 +57,10 @@
     "flux-standard-action": "^1.0.0",
     "gitbook-cli": "^2.3.0",
     "mocha": "^2.2.5",
+    "rimraf": "^2.6.2",
     "webpack": "^1.13.1"
   },
   "dependencies": {
-    "babel-plugin-use-lodash-es": "^0.1.0",
     "invariant": "^2.2.1",
     "lodash": "^4.13.1",
     "lodash-es": "^4.17.4",
