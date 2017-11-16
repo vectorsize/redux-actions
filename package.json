@@ -5,11 +5,8 @@
   "main": "lib/index.js",
   "scripts": {
     "postinstall": "npm run build",
-    "build": "rollup -c",
+    "build": "rollup --config ./rollup.config.js",
     "clean": "rm -rf ./lib",
-    "lint": "esw build src webpack.config --color",
-    "lint:fix": "npm run lint -- --fix",
-    "lint:watch": "npm run lint -- --watch",
     "test": "mocha --compilers js:babel-register src/**/*-test.js",
     "test:watch": "npm run test -- --watch src/**/*-test.js"
   },
