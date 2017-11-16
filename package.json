@@ -6,7 +6,7 @@
   "scripts": {
     "postinstall": "npm run build",
     "build": "npm run clean && rollup -c",
-    "clean": "rimraf ./lib",
+    "clean": "rm -rf ./lib",
     "lint": "esw build src webpack.config --color",
     "lint:fix": "npm run lint -- --fix",
     "lint:watch": "npm run lint -- --watch",
@@ -41,7 +41,6 @@
     "lodash": "^4.13.1",
     "mocha": "^2.2.5",
     "reduce-reducers": "^0.1.0",
-    "rimraf": "^2.6.2",
     "rollup": "^0.50.0",
     "rollup-plugin-babel": "^3.0.2",
     "rollup-plugin-node-resolve": "^3.0.0"
