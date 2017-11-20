@@ -6,8 +6,8 @@ import isUndefined from 'lodash/isUndefined';
 import includes from 'lodash/includes';
 import invariant from 'invariant';
 
-export default function handleAction(type, reducer = identity, defaultState={}) {
-  const types = [type];
+export default function handleAction(symbol, reducer = identity, defaultState={}) {
+  const types = [symbol];
   invariant(
     !isUndefined(defaultState),
     `defaultState for reducer handling ${types.map(t => t.toString()).join(', ')} should be defined`
@@ -22,7 +22,7 @@ export default function handleAction(type, reducer = identity, defaultState={}) 
     : [reducer.next, reducer.throw].map(aReducer => (isNil(aReducer) ? identity : aReducer));
 
   return (state = defaultState, action) => {
-    const { type: actionType } = action;
+    const { key: actionType } = action;
     if (!actionType || !includes(types, actionType)) {
       return state;
     }

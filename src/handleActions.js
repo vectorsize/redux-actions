@@ -10,11 +10,11 @@ export default function handleActions(handlers, defaultState = {}) {
     'Expected handlers to be an plain object.'
   );
   const reducers = ownKeys(handlers)
-    .reduce((stack, type) =>
+    .reduce((stack, symbol) =>
       stack.concat(
         [handleAction(
-          type,
-          handlers[type],
+          symbol,
+          handlers[symbol],
           defaultState
         )])
     , []);
