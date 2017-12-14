@@ -1,5 +1,5 @@
 {
-  "name": "redux-actions",
+  "name": "redux-tools",
   "version": "1.3.1",
   "description": "Flux Standard Action utlities for Redux",
   "main": "lib/index.js",
