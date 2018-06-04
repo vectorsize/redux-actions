@@ -1,8 +1,8 @@
 # redux-tools
 
 This is a (WIP) collection of redux utilities based on [redux-actions](https://github.com/redux-utilities/redux-actions).  
-This utilities propose proper component modularisation and state management separation of concerns enforcing the original redux patterns.
-While some of the core ideas remain the same, some changes have been added to allow the following features.
+This utilities propose proper component modularisation and state management separation of concerns enforcing the original redux patterns.  
+While some of the core ideas remain the same, some changes have been added to allow the following features:
 
 * Adding unique identifiers to action names to avoid action collisions.
 * Enforces proper action/reducer matching.
