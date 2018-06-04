@@ -12,7 +12,9 @@
     "install": "npm run build"
   },
   "files": [
-    "lib"
+    "es",
+    "lib",
+    "dist"
   ],
   "keywords": [
     "redux",
