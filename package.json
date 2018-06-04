@@ -1,0 +1,45 @@
+{
+  "name": "redux-tools",
+  "version": "2.0.0",
+  "description": "Utlities for Redux",
+  "main": "lib/index.js",
+  "scripts": {
+    "dev": "nodemon --watch lib* ./node_modules/.bin/rollup -c",
+    "build": "rollup --config ./rollup.config.js",
+    "clean": "rm -rf ./lib",
+    "test": "mocha --compilers js:babel-register src/**/*-test.js",
+    "test:watch": "npm run test -- --watch src/**/*-test.js"
+  },
+  "keywords": [
+    "redux",
+    "fsa"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "babel-core": "6.7.7",
+    "babel-eslint": "6.1.1",
+    "babel-loader": "6.2.4",
+    "babel-preset-es2015-rollup": "3.0.0",
+    "babel-preset-stage-0": "6.5.0",
+    "babel-register": "6.7.2",
+    "chai": "3.0.0",
+    "cross-env": "2.0.0",
+    "eslint": "2.8.0",
+    "eslint-config-airbnb-base": "1.0.3",
+    "eslint-plugin-import": "1.5.0",
+    "eslint-watch": "2.1.13",
+    "flux-standard-action": "2.0.3",
+    "invariant": "2.2.1",
+    "lodash": "4.13.1",
+    "mocha": "2.2.5",
+    "reduce-reducers": "0.1.0",
+    "rollup": "0.50.1",
+    "rollup-plugin-babel": "^3.0.2",
+    "rollup-plugin-node-resolve": "3.0.0",
+    "rollup-plugin-uglify": "2.0.1",
+    "shortid": "2.2.8"
+  },
+  "devDependencies": {
+    "babel-plugin-transform-runtime": "^6.23.0"
+  }
+}
