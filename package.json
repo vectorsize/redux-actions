@@ -8,7 +8,8 @@
     "build": "rollup --config ./rollup.config.js",
     "clean": "rm -rf ./lib",
     "test": "mocha --compilers js:babel-register src/**/*-test.js",
-    "test:watch": "npm run test -- --watch src/**/*-test.js"
+    "test:watch": "npm run test -- --watch src/**/*-test.js",
+    "install": "npm run build"
   },
   "keywords": [
     "redux",
