@@ -11,11 +11,6 @@
     "test:watch": "npm run test -- --watch src/**/*-test.js",
     "install": "npm run build"
   },
-  "files": [
-    "es",
-    "lib",
-    "dist"
-  ],
   "keywords": [
     "redux",
     "fsa"
