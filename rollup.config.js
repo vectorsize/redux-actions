@@ -14,6 +14,7 @@ export default {
       extensions: ['.js']
     }),
     babel({
+      externalHelpers: false, runtimeHelpers: true,
       exclude: 'node_modules/**' // only transpile our source code
     }),
     uglify()
