@@ -1,13 +1,7 @@
 /*
-Small parts of this file is originally from REDUX-ACTIONS
-source: https://github.com/redux-utilities/redux-actions/blob/master/src/handleAction.js
+MIT License
 
-ORIGINAL LICENSE:
-===
-
-The MIT License (MIT)
-
-Copyright (c) 2016 Andrew Clark
+Copyright (c) Andrew Clark
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -28,27 +22,8 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import isPlainObject from 'lodash/isPlainObject';
-import reduceReducers from './reduce-reducers';
-import invariant from 'invariant';
-import handleAction from './handleAction';
-import ownKeys from './ownKeys';
-
-export default function handleActions(handlers, defaultState = {}) {
-  invariant(
-    isPlainObject(handlers),
-    'Expected handlers to be an plain object.'
+export default (...reducers) => (prevState, value, ...args) =>
+  reducers.reduce(
+    (newState, reducer) => reducer(newState, value, ...args),
+    prevState
   );
-  const reducers = ownKeys(handlers)
-    .reduce((stack, symbol) =>
-      stack.concat(
-        [handleAction(
-          symbol,
-          handlers[symbol],
-          defaultState
-        )])
-    , []);
-
-  const reducer = reduceReducers(...reducers);
-  return (state, action) => reducer(state || defaultState, action);
-}
